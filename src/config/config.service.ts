@@ -24,6 +24,9 @@ export class ConfigService {
   private validateInput(envConfig: EnvConfig): EnvConfig {
     const envVarsSchema: Joi.ObjectSchema = Joi.object({
       APP_PORT: Joi.number().default(3000),
+      NEO4J_URI: Joi.string(),
+      NEO4J_USER: Joi.string(),
+      NEO4J_PASSWORD: Joi.string()
     });
 
     const { error, value: validatedEnvConfig } = Joi.validate(
@@ -43,5 +46,17 @@ export class ConfigService {
 
   get app_port(): number {
     return parseInt(this.envConfig.APP_PORT);
+  }
+
+  get neo4j_uri(): string {
+    return this.envConfig.NEO4J_URI;
+  }
+
+  get neo4j_user(): string {
+    return this.envConfig.NEO4J_USER;
+  }
+
+  get neo4j_password(): string {
+    return this.envConfig.NEO4J_PASSWORD;
   }
 }

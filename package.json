@@ -28,6 +28,7 @@
     "@types/node": "^10.7.1",
     "dotenv": "^6.0.0",
     "joi": "^13.6.0",
+    "neo4j-driver": "^1.6.3",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.2.2",
     "typescript": "^3.0.1"
